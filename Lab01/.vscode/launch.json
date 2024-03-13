@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "run",
+      "request": "launch",
+      "mainClass": "run",
+      "projectName": "Lab01_bc2c6c05"
+    },
+    {
+      "type": "java",
       "name": "triangle",
       "request": "launch",
       "mainClass": "triangle",
