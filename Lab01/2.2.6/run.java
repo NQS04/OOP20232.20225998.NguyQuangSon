@@ -6,15 +6,11 @@ public class run {
         //Choose types of equation:
         String option;
         String message = "1.Linear_equation" + "\n2.Linear_system" + "\n3.Quadratic_equation" + "\n4.Exit";
-        while (true) {
-            int type = 0;
-            try{
-                option = JOptionPane.showInputDialog(null, message,
+        int type = 0;
+            option = JOptionPane.showInputDialog(null, message,
                 "Choose type of equation: ", JOptionPane.INFORMATION_MESSAGE);
-                type = Integer.parseInt(option);
-            } catch (NumberFormatException e){
-                JOptionPane.showMessageDialog(null, "Error, pls try again!");
-            }
+            type = Integer.parseInt(option);
+
             //Create object of optional classes
             switch (type) {
                 case 1:
@@ -34,6 +30,5 @@ public class run {
                 default:
                     break;
             }
-        }
     }
 }
