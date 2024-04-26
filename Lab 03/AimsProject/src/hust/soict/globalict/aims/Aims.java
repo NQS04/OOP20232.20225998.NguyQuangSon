@@ -21,15 +21,18 @@ public class Aims {
         }
         stuff.totalCost();
         
-        //Section 13
+        /*
+        Section 13 (LAB02)
         stuff.removeDVD(dvd1);
         stuff.addDVD(dvd1);
         for (int i = 0; i < stuff.getQuantity(); i++) {
             System.out.println(stuff.getList()[i].getID() +"\t"+ stuff.getList()[i].getTitle() + "\t" + stuff.getList()[i].getCost());
         }
         System.out.println("\n");
+        */
 
-        //Section 14
+        /*
+        Section 14 (LAB02)
         ArrayList<DVD> dvdList = new ArrayList<>();
         dvdList.add(dvd1);
         dvdList.add(dvd2);
@@ -38,6 +41,9 @@ public class Aims {
         for (int i = 0; i < stuff.getQuantity(); i++) {
             System.out.println(stuff.getList()[i].getID() +"\t"+ stuff.getList()[i].getTitle() + "\t" + stuff.getList()[i].getCost());
         }
+        */
         
+        stuff.printList();
+        stuff.SearchByTitle();
     }
 }

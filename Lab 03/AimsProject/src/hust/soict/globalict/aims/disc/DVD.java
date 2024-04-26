@@ -68,6 +68,18 @@ public class DVD {
         this.title = title;
     }
     
-
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + " : " + cost + " $";
+    }
     
+    public boolean isMatch(String title) {
+        String[] DVD_words = this.title.split("\\s+");
+        String[] title_words = title.split("\\s+");
+        for (String title_word : title_words) {
+            for (String DVD_word : DVD_words) {
+                if (DVD_word.equalsIgnoreCase(title_word)) return true;
+            }
+        }
+        return false;
+    } 
 }
