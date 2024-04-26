@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 public class Aims {
     public static void main(String[] args) {
         Cart stuff = new Cart();
@@ -34,6 +34,8 @@ public class Aims {
         for (int i = 0; i < stuff.getQuantity(); i++) {
             System.out.println(stuff.getList()[i].getID() +"\t"+ stuff.getList()[i].getTitle() + "\t" + stuff.getList()[i].getCost());
         }
+
+        stuff.printList();
         
     }
 }

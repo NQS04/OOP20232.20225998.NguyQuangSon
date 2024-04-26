@@ -1,3 +1,5 @@
+package hust.soict.globalict.aims.cart;
+
 import java.util.ArrayList;
 
 public class Cart {
@@ -68,6 +70,15 @@ public class Cart {
             totalCost += cost;
         }
         System.out.println("Total cost is: " + totalCost);
+    }
+
+    public void printList() {
+        System.out.println("********************CART********************\nOrdered Items:");
+        for (int i = 0; i < quantity; i++) {
+            System.out.println(i + ". " + list[i].toString());
+        }
+        totalCost();
+        System.out.println("********************************************");
     }
 
 }

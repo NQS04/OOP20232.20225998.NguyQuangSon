@@ -1,3 +1,5 @@
+package hust.soict.globalict.aims.disc;
+
 public class DVD {
     private String title;
     private String category;
@@ -66,6 +68,9 @@ public class DVD {
         this.title = title;
     }
     
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + " : " + cost + " $";
+    }
 
     
 }
