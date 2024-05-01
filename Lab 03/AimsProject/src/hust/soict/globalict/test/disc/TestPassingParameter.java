@@ -1,6 +1,6 @@
 package hust.soict.globalict.test.disc;
 
-import hust.soict.globalict.aims.disc.*;
+import hust.soict.globalict.aims.media.*;
 
 public class TestPassingParameter {
     public static void main (String[] args) {

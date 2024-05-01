@@ -1,7 +1,6 @@
 package hust.soict.globalict.aims.store;
 
-import hust.soict.globalict.aims.store.*;
-import hust.soict.globalict.aims.disc.*;
+import hust.soict.globalict.aims.media.*;
 
 public class StoreTest {
     public static void main(String[] args) {
@@ -11,8 +10,8 @@ public class StoreTest {
         DVD dvd2 = new DVD("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
         DVD dvd3 = new DVD("Aladin","Animation", 18.99f);
 
-        store.addDVD(dvd1);
-        store.addDVD(dvd2);
-        store.addDVD(dvd3);
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(dvd3);
     }
 }
