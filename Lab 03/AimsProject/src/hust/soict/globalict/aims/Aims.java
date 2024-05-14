@@ -101,13 +101,14 @@ public class Aims {
             int option = scanner.nextInt();
             switch (option) {
                 case 0:
-                    scanner.close();
+                    //scanner.close();
                     return;
                 case 1:
                     while(true) {
                         System.out.println("Pls enter the title of the media (Press 0 to return)");
-                        String title = scanner.next();
+                        String title = scanner.nextLine();
                         Media result = store.search(title);
+                        if (title.equals("0")) break; //return
                         if (result == null) {
                             System.out.println("Can not find the keywords " + title + " in the store, pls try again!");
                         }
@@ -115,14 +116,14 @@ public class Aims {
                             System.out.println(result.toString());
                             mediaDetailsMenu(result);
                         }
-                        if (title.equals("0")) break; //return
                     }
                     break;
                 case 2:
                     while(true) {
                         System.out.println("Pls enter the media's title to add to your cart! (press 0 to return)");
-                        String title = scanner.next();
+                        String title = scanner.nextLine();
                         Media result = store.search(title);
+                        if (title.equals("0")) break; //return
                         if (result == null) {
                             System.out.println("Can not find the keywords " + title + " in the store, pls try again!");
                         }
@@ -130,14 +131,14 @@ public class Aims {
                             cart.addMedia(result);
                             System.out.println("Current number of items in your cart: " + cart.getQuantity());
                         }
-                        if (title.equals("0")) break; //return
                     }
                 break;
                 case 3:
                     while(true) {
                         System.out.println("Pls enter the media's title to play (press 0 to return)");
-                        String title = scanner.next();
+                        String title = scanner.nextLine();
                         Media result = store.search(title);
+                        if (title.equals("0")) break; //return
                         if (result == null) {
                             System.out.println("Can not find the keywords " + title + " in the store, pls try again!");
                         }
@@ -147,7 +148,6 @@ public class Aims {
                             }
                             else System.out.println("Cannot be played");
                         }
-                        if (title.equals("0")) break; //return
                     }
                 break;
                 case 4:
@@ -227,9 +227,9 @@ public class Aims {
                                 break;
                             case 1:
                                 System.out.println("Enter by following order: title - category - director - length - cost");
-                                String dvdTitle = scanner.next();
-                                String dvdCategory = scanner.next();
-                                String dvdDirector = scanner.next();
+                                String dvdTitle = scanner.nextLine();
+                                String dvdCategory = scanner.nextLine();
+                                String dvdDirector = scanner.nextLine();
                                 int dvdLength = scanner.nextInt();
                                 float dvdCost = scanner.nextFloat();
                                 
@@ -238,9 +238,9 @@ public class Aims {
                                 break;
                             case 2:
                                 System.out.println("Enter by following order: title - category - artist - cost");
-                                String cdTitle = scanner.next();
-                                String cdCategory = scanner.next();
-                                String cdArtist = scanner.next();
+                                String cdTitle = scanner.nextLine();
+                                String cdCategory = scanner.nextLine();
+                                String cdArtist = scanner.nextLine();
                                 float cdCost = scanner.nextFloat();
 
                                 CompactDisc cd = new CompactDisc(cdTitle, cdCategory, cdArtist, cdCost);
@@ -256,7 +256,7 @@ public class Aims {
                                     for (int i = 0; i < numTrack; i++) {
                                         System.out.println("Track number " + (i+1) + ":");
                                         System.out.println("Enter track title: ");
-                                        String trackTitle = scanner.next();
+                                        String trackTitle = scanner.nextLine();
                                         System.out.println("Enter track length: ");
                                         int trackLength = scanner.nextInt();
                                         
@@ -267,8 +267,8 @@ public class Aims {
                             break;
                             case 3:
                                 System.out.println("Enter by following order: title - category - cost");
-                                String bookTitle = scanner.next();
-                                String bookCategory = scanner.next();
+                                String bookTitle = scanner.nextLine();
+                                String bookCategory = scanner.nextLine();
                                 float bookCost = scanner.nextFloat();
 
                                 Book book = new Book(bookTitle, bookCategory, bookCost);
@@ -278,7 +278,7 @@ public class Aims {
                                 int numAuthor = scanner.nextInt();
                                 for (int i = 0; i < numAuthor; i++) {
                                     System.out.println("Enter the name of " + i + "'s Authors");
-                                    String authorName = scanner.next();
+                                    String authorName = scanner.nextLine();
                                     book.addAuthor(authorName);
                                 }
                                 break;
@@ -289,7 +289,7 @@ public class Aims {
                 case 2:
                     while(true) {
                         System.out.println("Enter the title of the media: ");
-                        String title = scanner.next();
+                        String title = scanner.nextLine();
                         Media media = store.search(title);
                         if (media == null) {
                             System.out.println("Error 404 not found");
@@ -339,7 +339,7 @@ public class Aims {
                     break;
                 case 3:
                     System.out.println("Enter the title of the media to remove: ");
-                    String title = scanner.next();
+                    String title = scanner.nextLine();
                     Media media = cart.search(title);
                     if (media == null) {
                         System.out.println("Error 404 not found");
@@ -349,7 +349,7 @@ public class Aims {
                     break;
                 case 4:
                     System.out.println("Enter the title of the media to play: ");
-                    String titlePlay = scanner.next();
+                    String titlePlay = scanner.nextLine();
                     Media mediaPlay = cart.search(titlePlay);
                     if (mediaPlay == null) {
                         System.out.println("Error 404 not found");
