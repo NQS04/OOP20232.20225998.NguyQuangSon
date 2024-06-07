@@ -39,6 +39,7 @@ public class CompactDisc extends Disc implements Playable {
         else System.out.println("The track " + track.getTitle() + " is not in the list of tracks");
     }
 
+    @Override
     public void play() {
         System.out.println("Playing CD: " + this.getTitle());
         System.out.println("CD length: " + this.getLength());

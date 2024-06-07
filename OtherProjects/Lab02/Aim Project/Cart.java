@@ -1,4 +1,3 @@
-package hust.soict.globalict.aims.cart;
 
 import java.util.ArrayList;
 

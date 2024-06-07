@@ -37,7 +37,7 @@ public class Cart {
         for (Media media : itemOrdered) {
             totalCost += media.getCost();
         }
-        System.out.println("Total cost is: " + totalCost);
+        System.out.println("Total cost is: " + totalCost + " $");
     }
 
     //Print list of oredered items
@@ -64,7 +64,6 @@ public class Cart {
             }
         }
         if (flag == 0) System.out.println("No ID is found!");
-        scanner.close(); 
     }
 
     //SearchByTitle
@@ -80,7 +79,6 @@ public class Cart {
             }
         }
         if (count == 0) System.out.println("No title is found");
-        scanner.close();
     }
 
     //PrintQuantity
@@ -114,8 +112,6 @@ public class Cart {
 
     //empty the cart
     public void empty() {
-        for (Media media : itemOrdered) {
-            itemOrdered.remove(media);
-        }
+        itemOrdered.clear();
     }
 }

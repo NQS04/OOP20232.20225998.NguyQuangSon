@@ -61,20 +61,20 @@ public class Aims {
             System.out.println("--------------------------------"); 
             System.out.println("Please choose a number: 0-1-2-3");
             
-            int option = scanner.nextInt();
+            String option = scanner.nextLine();
             switch (option) {
-                case 0:
+                case "0":
                     System.out.println("End Task");
                     scanner.close();
                     return;
-                case 1:
+                case "1":
                     store.printList();
                     storeMenu();
                     break;
-                case 2:
+                case "2":
                     updateStore();
                     break;
-                case 3:
+                case "3":
                     cart.printList();
                     cartMenu();
                     break;
@@ -98,14 +98,13 @@ public class Aims {
             System.out.println("--------------------------------"); 
             System.out.println("Please choose a number: 0-1-2-3-4"); 
 
-            int option = scanner.nextInt();
+            String option = scanner.nextLine();
             switch (option) {
-                case 0:
-                    //scanner.close();
+                case "0":
                     return;
-                case 1:
+                case "1":
                     while(true) {
-                        System.out.println("Pls enter the title of the media (Press 0 to return)");
+                        System.out.println("Pls enter the title of the media to see detail (Press 0 to return)");
                         String title = scanner.nextLine();
                         Media result = store.search(title);
                         if (title.equals("0")) break; //return
@@ -118,7 +117,7 @@ public class Aims {
                         }
                     }
                     break;
-                case 2:
+                case "2":
                     while(true) {
                         System.out.println("Pls enter the media's title to add to your cart! (press 0 to return)");
                         String title = scanner.nextLine();
@@ -133,7 +132,7 @@ public class Aims {
                         }
                     }
                 break;
-                case 3:
+                case "3":
                     while(true) {
                         System.out.println("Pls enter the media's title to play (press 0 to return)");
                         String title = scanner.nextLine();
@@ -150,7 +149,7 @@ public class Aims {
                         }
                     }
                 break;
-                case 4:
+                case "4":
                     cart.printList();
                     cartMenu();
                     break;
@@ -172,15 +171,14 @@ public class Aims {
             System.out.println("--------------------------------"); 
             System.out.println("Please choose a number: 0-1-2");
             
-            int option = scanner.nextInt();
+            String option = scanner.nextLine();
             switch(option) {
-                case 0:
-                    scanner.close();
+                case "0":
                     return;
-                case 1:
+                case "1":
                     cart.addMedia(media);
                     break;
-                case 2:
+                case "2":
                     if(media instanceof CompactDisc || media instanceof DVD) {
                         media.play();
                     }
@@ -204,12 +202,11 @@ public class Aims {
             System.out.println("--------------------------------");
             System.out.println("Please choose a number: 0-1-2");
 
-            int option = scanner.nextInt();
+            String option = scanner.nextLine();
             switch (option) {
-                case 0:
-                    scanner.close();
+                case "0":
                     return;
-                case 1:
+                case "1":
                     boolean back_1 = false;
                     while(!back_1) {
                         System.out.println("Enter the category of the media:");
@@ -220,28 +217,31 @@ public class Aims {
                         System.out.println("--------------------------------");
                         System.out.println("Please choose a number: 0-1-2-3");
 
-                        int choice = scanner.nextInt();
+                        String choice = scanner.nextLine();
                         switch (choice) {
-                            case 0:
+                            case "0":
                                 back_1 = true;
                                 break;
-                            case 1:
+                            case "1":
                                 System.out.println("Enter by following order: title - category - director - length - cost");
                                 String dvdTitle = scanner.nextLine();
                                 String dvdCategory = scanner.nextLine();
                                 String dvdDirector = scanner.nextLine();
-                                int dvdLength = scanner.nextInt();
-                                float dvdCost = scanner.nextFloat();
+                                String dvdLength_input = scanner.nextLine();
+                                int dvdLength = Integer.parseInt(dvdLength_input);
+                                String dvdCost_input = scanner.nextLine();
+                                Float dvdCost = Float.parseFloat(dvdCost_input);
                                 
                                 DVD dvd = new DVD(dvdTitle, dvdCategory, dvdDirector, dvdLength, dvdCost);
                                 store.addMedia(dvd);
                                 break;
-                            case 2:
+                            case "2":
                                 System.out.println("Enter by following order: title - category - artist - cost");
                                 String cdTitle = scanner.nextLine();
                                 String cdCategory = scanner.nextLine();
                                 String cdArtist = scanner.nextLine();
-                                float cdCost = scanner.nextFloat();
+                                String cdCost_input = scanner.nextLine();
+                                float cdCost = Float.parseFloat(cdCost_input);
 
                                 CompactDisc cd = new CompactDisc(cdTitle, cdCategory, cdArtist, cdCost);
                                 store.addMedia(cd);
@@ -249,33 +249,37 @@ public class Aims {
                                 System.out.println("Wanna add tracks?");
                                 System.out.println("1. Yes");
                                 System.out.println("2. No");
-                                int addTrack = scanner.nextInt();
-                                if (addTrack == 1) {
+                                String addTrack = scanner.nextLine();
+                                if (addTrack == "1") {
                                     System.out.println("How many tracks in your CD?");
-                                    int numTrack = scanner.nextInt();
+                                    String numTrack_input = scanner.nextLine();
+                                    int numTrack = Integer.parseInt(cdCost_input);
                                     for (int i = 0; i < numTrack; i++) {
                                         System.out.println("Track number " + (i+1) + ":");
                                         System.out.println("Enter track title: ");
                                         String trackTitle = scanner.nextLine();
                                         System.out.println("Enter track length: ");
-                                        int trackLength = scanner.nextInt();
+                                        String trackLength_input = scanner.nextLine();
+                                        int trackLength = Integer.parseInt(cdCost_input);
                                         
                                         Track track = new Track(trackTitle, trackLength);
                                         cd.addTrack(track);
                                     }
                                 }
                             break;
-                            case 3:
+                            case "3":
                                 System.out.println("Enter by following order: title - category - cost");
                                 String bookTitle = scanner.nextLine();
                                 String bookCategory = scanner.nextLine();
-                                float bookCost = scanner.nextFloat();
+                                String bookCost_input = scanner.nextLine();
+                                float bookCost = Float.parseFloat(bookCost_input);
 
                                 Book book = new Book(bookTitle, bookCategory, bookCost);
                                 store.addMedia(book);
 
                                 System.out.println("How many authors of this book: ");
-                                int numAuthor = scanner.nextInt();
+                                String numAuthor_input = scanner.nextLine();
+                                int numAuthor = Integer.parseInt(bookCost_input);
                                 for (int i = 0; i < numAuthor; i++) {
                                     System.out.println("Enter the name of " + i + "'s Authors");
                                     String authorName = scanner.nextLine();
@@ -286,7 +290,8 @@ public class Aims {
                                 break;
                         }
                     }
-                case 2:
+                    break;
+                case "2":
                     while(true) {
                         System.out.println("Enter the title of the media: ");
                         String title = scanner.nextLine();
@@ -320,24 +325,23 @@ public class Aims {
             System.out.println("--------------------------------");
             System.out.println("Please choose a number: 0-1-2-3-4-5");
 
-            int option = scanner.nextInt();
+            String option = scanner.nextLine();
             switch (option) {
-                case 0:
-                    scanner.close();
+                case "0":
                     return;
-                case 1:
+                case "1":
                     System.out.println("Filter by:\n1. Title\n2. Cost\n");
-                    int filterOption = scanner.nextInt();
-                    if (filterOption == 1) cart.SearchByTitle();
+                    String filterOption = scanner.nextLine();
+                    if (filterOption.equals("1")) cart.SearchByTitle();
                     else cart.SearchByID();
                     break;
-                case 2:
+                case "2":
                     System.out.println("Sort by:\n1. Title\n2. Cost");
-                    int sortOption = scanner.nextInt();
-                    if (sortOption == 1) cart.sortMediaByTitle();
+                    String sortOption = scanner.nextLine();
+                    if (sortOption.equals("1")) cart.sortMediaByTitle();
                     else cart.sortMediaByCost();
                     break;
-                case 3:
+                case "3":
                     System.out.println("Enter the title of the media to remove: ");
                     String title = scanner.nextLine();
                     Media media = cart.search(title);
@@ -347,7 +351,7 @@ public class Aims {
                     }
                     else cart.removeMedia(media);
                     break;
-                case 4:
+                case "4":
                     System.out.println("Enter the title of the media to play: ");
                     String titlePlay = scanner.nextLine();
                     Media mediaPlay = cart.search(titlePlay);
@@ -360,10 +364,10 @@ public class Aims {
                     }
                     else System.out.println("Cannot be played");
                     break;
-                case 5:
+                case "5":
                     System.out.println("An ordered is created automatically!");
                     cart.empty();
-                    break;
+                    return;
                 default:
                     break;
             }
