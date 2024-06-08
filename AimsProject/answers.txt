@@ -1,0 +1,15 @@
+- Class should implement the 'Comparable' interface: Media
+- In the class that implement the 'Comparable' interface (Media), we can do as follow:
+
+    @Override
+        public int compareTo(Media m) {
+            int titleCompare = this.getTitle().compareTo(m.getTitle());
+            if (titleCompare != 0) return titleCompare;
+            return Double.compare(this.getCost(), m.getCost());
+        }
+
+- No, with the Comparable interface, we can define only one natural ordering in the compareTo method.
+To have multiple ordering rules, we need to use the Comparator interface.
+
+- If DVDs have a different ordering rule (by title, then decreasing length, then cost),
+we can override the compareTo method and change the method to compare title first, and then length and then cost.
