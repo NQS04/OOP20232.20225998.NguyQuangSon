@@ -1,4 +1,4 @@
-package hust.soict.globalict.aims;
+package hust.soict.globalict.aims.Aims;
 import java.util.Scanner;
 
 import hust.soict.globalict.aims.cart.*;
@@ -253,14 +253,14 @@ public class Aims {
                                 if (addTrack == "1") {
                                     System.out.println("How many tracks in your CD?");
                                     String numTrack_input = scanner.nextLine();
-                                    int numTrack = Integer.parseInt(cdCost_input);
+                                    int numTrack = Integer.parseInt(numTrack_input);
                                     for (int i = 0; i < numTrack; i++) {
                                         System.out.println("Track number " + (i+1) + ":");
                                         System.out.println("Enter track title: ");
                                         String trackTitle = scanner.nextLine();
                                         System.out.println("Enter track length: ");
                                         String trackLength_input = scanner.nextLine();
-                                        int trackLength = Integer.parseInt(cdCost_input);
+                                        int trackLength = Integer.parseInt(trackLength_input);
                                         
                                         Track track = new Track(trackTitle, trackLength);
                                         cd.addTrack(track);
@@ -279,7 +279,7 @@ public class Aims {
 
                                 System.out.println("How many authors of this book: ");
                                 String numAuthor_input = scanner.nextLine();
-                                int numAuthor = Integer.parseInt(bookCost_input);
+                                int numAuthor = Integer.parseInt(numAuthor_input);
                                 for (int i = 0; i < numAuthor; i++) {
                                     System.out.println("Enter the name of " + i + "'s Authors");
                                     String authorName = scanner.nextLine();

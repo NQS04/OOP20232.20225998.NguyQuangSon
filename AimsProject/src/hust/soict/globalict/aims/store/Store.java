@@ -43,7 +43,7 @@ public class Store {
         System.out.println("********************************************************");
     }
 
-    public Media searchByTitle(String title) {
+    public Media searchByTitle(String title) {  //separate words
         for (Media media : itemsInStore) {
             if (media.isMatch(title)) {
                 System.out.println(media.toString());
@@ -53,7 +53,7 @@ public class Store {
         return null;
     }
 
-    public Media search(String title) {
+    public Media search(String title) { //the total title
         for (Media media : itemsInStore) {
             if(media.getTitle().equalsIgnoreCase(title)) return media;
         }
