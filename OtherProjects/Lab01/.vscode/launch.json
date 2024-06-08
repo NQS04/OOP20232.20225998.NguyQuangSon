@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "run",
+      "request": "launch",
+      "mainClass": "run",
+      "projectName": "Lab01_bc2c6c05"
+    },
+    {
+      "type": "java",
+      "name": "triangle",
+      "request": "launch",
+      "mainClass": "triangle",
+      "projectName": "Lab1_716cc9ad"
+    },
+    {
+      "type": "java",
+      "name": "ChoosingOption",
+      "request": "launch",
+      "mainClass": "ChoosingOption",
+      "projectName": "Lab1_716cc9ad"
+    },
+    {
+      "type": "java",
+      "name": "Quadratic_equation",
+      "request": "launch",
+      "mainClass": "Quadratic_equation",
+      "projectName": "Lab1_716cc9ad"
+    },
+    {
+      "type": "java",
+      "name": "cal",
+      "request": "launch",
+      "mainClass": "cal",
+      "projectName": "Lab1_716cc9ad"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/OOP Lab/OOP20232.20225998.NguyQuangSon/Lab1",
+      "program": "d:/OOP Lab/OOP20232.20225998.NguyQuangSon/Lab1/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
