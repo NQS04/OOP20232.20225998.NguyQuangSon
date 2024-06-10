@@ -1,10 +1,8 @@
 package hust.soict.globalict.aims.Aims;
-import java.util.Scanner;
-
 import hust.soict.globalict.aims.cart.*;
 import hust.soict.globalict.aims.media.*;
 import hust.soict.globalict.aims.store.*;
-
+import java.util.Scanner;
 public class Aims {
 
     private static Cart cart = new Cart();

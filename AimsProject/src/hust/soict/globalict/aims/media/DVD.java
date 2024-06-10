@@ -1,5 +1,7 @@
 package hust.soict.globalict.aims.media;
 
+
+
 public class DVD extends Disc implements Playable {
 
     //Constructor method
@@ -19,6 +21,7 @@ public class DVD extends Disc implements Playable {
         return super.getID() + "- " + "DVD - " + super.getTitle() + " - " + super.getCategory() + " - " + super.getDirector() + " - " + super.getLength() + " : " + super.getCost() + " $";
     }
     
+    
     public boolean isMatch(String title) {
         String[] DVD_words = super.getTitle().split("\\s+");
         String[] title_words = title.split("\\s+");
@@ -34,5 +37,11 @@ public class DVD extends Disc implements Playable {
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());
         System.out.println("DVD length: " + this.getLength());
+    }
+
+    @Override
+    public String playMedia() {
+        String playDVD = "Playing DVD: " + this.getTitle() + "\nDVD length: " + this.getLength();
+        return playDVD;
     }
 }
