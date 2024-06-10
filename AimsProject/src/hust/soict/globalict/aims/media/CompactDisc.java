@@ -39,6 +39,10 @@ public class CompactDisc extends Disc implements Playable {
         else System.out.println("The track " + track.getTitle() + " is not in the list of tracks");
     }
 
+    public String toString() {
+        return super.getID() + "- " + "CD - " + super.getTitle() + " - " + super.getCategory() + " - " + this.getArtist() + " : " + super.getCost() + " $";
+    }
+
     @Override
     public void play() {
         System.out.println("Playing CD: " + this.getTitle());
@@ -48,7 +52,13 @@ public class CompactDisc extends Disc implements Playable {
         }
     }
 
-    public String toString() {
-        return super.getID() + "- " + "CD - " + super.getTitle() + " - " + super.getCategory() + " - " + this.getArtist() + " : " + super.getCost() + " $";
+    @Override
+    public String playMedia() {
+        String playCD = "Playing CD: " + this.getTitle() + "\nCD length: " + this.getLength();
+        playCD = playCD + "\nTracks: ";
+        for (Track track : tracks) {
+            playCD = playCD + "\n+ " + track.playMedia();
+        }
+        return playCD;
     }
-}
+} 

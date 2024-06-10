@@ -16,12 +16,17 @@ public class Track implements Playable {
         this.title = title;
         this.length = length;
     }
-    
+    @Override
     public void play() {
         System.out.println("Playing track: " + this.getTitle());
         System.out.println("Track length: " + this.getLength());
 
     }
 
+    @Override
+    public String playMedia() {
+        String playTrack = "Playing track: " + this.getTitle() + "\nTrack length: " + this.getLength();
+        return playTrack;
+    }
 
 }

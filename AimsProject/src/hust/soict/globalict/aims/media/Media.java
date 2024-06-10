@@ -70,6 +70,11 @@ public abstract class Media implements Comparable<Media> {
         System.out.println("Playing media");
     }
 
+    public String playMedia() {
+        String playMedia = "Playing media";
+        return playMedia;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Media)) return false;
