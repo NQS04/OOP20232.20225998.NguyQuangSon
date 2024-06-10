@@ -1,4 +1,4 @@
-package hust.soict.globalict.aims;
+package hust.soict.globalict.aims.Aims;
 import java.util.Scanner;
 
 import hust.soict.globalict.aims.cart.*;
