@@ -5,6 +5,9 @@ import hust.soict.globalict.aims.cart.*;
 import hust.soict.globalict.aims.media.*;
 import hust.soict.globalict.aims.store.*;
 
+import javax.naming.LimitExceededException;
+import javax.swing.*;
+
 public class Aims {
 
     private static Cart cart = new Cart();
@@ -127,7 +130,11 @@ public class Aims {
                             System.out.println("Can not find the keywords " + title + " in the store, pls try again!");
                         }
                         else {
-                            cart.addMedia(result);
+                            try {
+                                cart.addMedia(result);
+                            } catch (LimitExceededException e) {
+                                break;
+                            }
                             System.out.println("Current number of items in your cart: " + cart.getQuantity());
                         }
                         if (title.equals("0")) break; //return
@@ -143,7 +150,11 @@ public class Aims {
                         }
                         else {
                             if (result instanceof DVD || result instanceof CompactDisc) {
-                                result.play();
+                                try {
+                                    result.play();
+                                } catch (Exception e) {
+                                    JOptionPane.showMessageDialog(null, e.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
+                                }
                             }
                             else System.out.println("Cannot be played");
                         }
@@ -178,11 +189,19 @@ public class Aims {
                     scanner.close();
                     return;
                 case 1:
-                    cart.addMedia(media);
+                    try {
+                        cart.addMedia(media);
+                    } catch (LimitExceededException e) {
+                        break;
+                    }
                     break;
                 case 2:
                     if(media instanceof CompactDisc || media instanceof DVD) {
-                        media.play();
+                        try {
+                            media.play();
+                        } catch (Exception e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        }
                     }
                     else System.out.println("Cannot be played");
                     break;
@@ -356,7 +375,11 @@ public class Aims {
                         break;
                     }
                     if (mediaPlay instanceof CompactDisc || mediaPlay instanceof DVD) {
-                        mediaPlay.play();
+                        try {
+                            mediaPlay.play();
+                        } catch (Exception e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        }
                     }
                     else System.out.println("Cannot be played");
                     break;

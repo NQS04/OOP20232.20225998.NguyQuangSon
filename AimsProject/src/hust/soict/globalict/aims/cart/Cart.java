@@ -1,6 +1,10 @@
 package hust.soict.globalict.aims.cart;
 import hust.soict.globalict.aims.media.*;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
+import javax.naming.LimitExceededException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,11 +13,14 @@ import java.util.Iterator;
 
 
 public class Cart {
-
-    private ArrayList<Media> itemOrdered = new ArrayList<Media>();
+    public static final int MAX = 20;
+    private ObservableList<Media> itemOrdered = FXCollections.observableArrayList();
 
     //addMedia
-    public void addMedia(Media media) {
+    public void addMedia(Media media) throws LimitExceededException {
+        if (itemOrdered.size() >= MAX) {
+            throw new LimitExceededException("Your cart is full");
+        }
         if(!itemOrdered.contains(media)) {
             itemOrdered.add(media);
             System.out.println("Added successfully");
@@ -113,5 +120,17 @@ public class Cart {
     //empty the cart
     public void empty() {
         itemOrdered.clear();
+    }
+
+    public ObservableList<Media> getItemOrdered() {
+        return itemOrdered;
+    }
+
+    public float getTotalCost() {
+        float total = 0f;
+        for (Media media : itemOrdered) {
+            total += media.getCost();
+        }
+        return total;
     }
 }

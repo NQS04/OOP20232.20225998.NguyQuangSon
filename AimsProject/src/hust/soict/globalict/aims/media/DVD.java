@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims.media;
 
 
+import hust.soict.globalict.aims.exception.PlayerException;
 
 public class DVD extends Disc implements Playable {
 
@@ -34,9 +35,14 @@ public class DVD extends Disc implements Playable {
     } 
 
     @Override
-    public void play() {
-        System.out.println("Playing DVD: " + this.getTitle());
-        System.out.println("DVD length: " + this.getLength());
+    public void play() throws PlayerException {
+        if (super.getLength() > 0) {
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength());
+        }
+        else {
+            throw new PlayerException("DVD playing failed");
+        }
     }
 
     @Override
