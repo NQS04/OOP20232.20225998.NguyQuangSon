@@ -1,0 +1,94 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.aims.Aims.Aims",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "TestViewStoreScreen",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.aims.screen.customer.store.TestViewStoreScreen",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "StoreManagerScreen",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.aims.screen.manager.StoreManagerScreen",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "StoreTest",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.aims.store.StoreTest",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "ConcatenationInLoops",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.garbage.ConcatenationInLoops",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "GarbageCreator",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.garbage.GarbageCreator",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "NoGarbage",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.garbage.NoGarbage",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "CartTest",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.test.cart.CartTest",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        },
+        {
+            "type": "java",
+            "name": "TestPassingParameter",
+            "request": "launch",
+            "mainClass": "AimsProject/hust.soict.globalict.test.disc.TestPassingParameter",
+            "projectName": "AimsProject_10b97de2",
+            "vmArgs": "--module-path \"C:/Users/NITRO 5/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+
+        }
+    ]
+}

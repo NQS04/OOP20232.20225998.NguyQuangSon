@@ -3,6 +3,8 @@ package hust.soict.globalict.test.cart;
 import hust.soict.globalict.aims.cart.*;
 import hust.soict.globalict.aims.media.*;
 
+import javax.naming.LimitExceededException;
+
 public class CartTest {
     public static void main(String[] args) {
         //Create a new cart
@@ -13,9 +15,19 @@ public class CartTest {
         DVD dvd2 = new DVD("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
         DVD dvd3 = new DVD("Aladin","Animation", 18.99f);
 
-        cart.addMedia(dvd1);
-        cart.addMedia(dvd2);
-        cart.addMedia(dvd3);
+        try {
+            cart.addMedia(dvd1);
+        } catch (LimitExceededException e) {
+        }
+        try {
+            cart.addMedia(dvd2);
+        } catch (LimitExceededException e) {
+        }
+        try {
+            cart.addMedia(dvd3);
+        } catch (LimitExceededException e) {
+        }
+
 
         cart.printList();
         

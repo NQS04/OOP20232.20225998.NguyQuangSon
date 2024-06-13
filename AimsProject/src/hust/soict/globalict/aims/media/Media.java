@@ -1,5 +1,7 @@
 package hust.soict.globalict.aims.media;
 
+import hust.soict.globalict.aims.exception.PlayerException;
+
 import java.util.Comparator;
 
 public abstract class Media implements Comparable<Media> {
@@ -36,7 +38,7 @@ public abstract class Media implements Comparable<Media> {
         this.title = title;
         this.cost = cost;
         Media.nbMedia++;
-        this.id = nbMedia;
+        id = nbMedia;
     }
 
     //Setter
@@ -66,7 +68,7 @@ public abstract class Media implements Comparable<Media> {
         return false;
     } 
 
-    public void play() {
+    public void play() throws PlayerException {
         System.out.println("Playing media");
     }
 
@@ -87,6 +89,9 @@ public abstract class Media implements Comparable<Media> {
 
     @Override
     public int compareTo(Media m) {
+        if (m == null) {
+            throw new NullPointerException("The provided media is null");
+        }
         int titleCompare = this.getTitle().compareTo(m.getTitle());
         if (titleCompare != 0) return titleCompare;
         return Double.compare(this.getCost(), m.getCost());
